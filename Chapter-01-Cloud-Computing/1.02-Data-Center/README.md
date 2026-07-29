@@ -42,24 +42,24 @@ A Data Center is much more than just a room with computers. It requires speciali
 
 ```mermaid
 graph TD
-    subgraph Data Center Facility
-        Power[Power Grid] --> UPS[UPS Battery Backup]
-        UPS --> Generators[Diesel Generators]
-        Generators --> Racks
-        UPS --> Racks
-        
-        Cooling[CRAC / Cooling Towers] -.-> Racks
-        Fire[FM-200 Fire Suppression] -.-> Racks
-        Security[Biometrics / Mantraps] -.-> Racks
-        
-        subgraph Server Room
-            Racks[Server Racks]
-            Net[Switches & Routers]
-            Racks <--> Net
-        \end
-        
-        Net <--> Internet((Global Internet Fiber))
-    \end
+    subgraph sub_Data_Center_Facility ["Data Center Facility"]
+    Power["Power Grid"] --> UPS["UPS Battery Backup"]
+    UPS --> Generators["Diesel Generators"]
+    Generators --> Racks
+    UPS --> Racks
+
+    Cooling["CRAC / Cooling Towers"] -.-> Racks
+    Fire["FM-200 Fire Suppression"] -.-> Racks
+    Security["Biometrics / Mantraps"] -.-> Racks
+
+    subgraph sub_Server_Room ["Server Room"]
+    Racks["Server Racks"]
+    Net["Switches & Routers"]
+    Racks <--> Net
+    end
+
+    Net <--> Internet(("Global Internet Fiber"))
+    end
 ```
 
 ---

@@ -101,13 +101,13 @@ sudo systemctl start myapp
 
 ```mermaid
 graph TD
-    Laptop[Developer Laptop] --> |1. SCP app.jar| EC2[EC2 Instance]
-    Internet[Users] --> |2. HTTP 8080| EC2
-    
-    subgraph Linux OS
-        EC2 --> SystemD[SystemD Service Manager]
-        SystemD --> JRE[Java Runtime Environment]
-        JRE --> App[Spring Boot App]
+    Laptop["Developer Laptop"] --> |1. SCP app.jar| EC2["EC2 Instance"]
+    Internet["Users"] --> |2. HTTP 8080| EC2
+
+    subgraph sub_Linux_OS ["Linux OS"]
+    EC2 --> SystemD["SystemD Service Manager"]
+    SystemD --> JRE["Java Runtime Environment"]
+    JRE --> App["Spring Boot App"]
     end
 ```
 

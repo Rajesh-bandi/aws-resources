@@ -75,6 +75,32 @@ A Virtual Machine is like an **MP4 video file**. It looks and plays just like th
 
 ---
 
+## 🏗️ Architecture & Flowchart
+
+```mermaid
+graph TD
+    subgraph Host_Physical ["Physical Host Machine"]
+    HostOS["Host OS / Hypervisor"]
+
+    subgraph VM_1 ["Virtual Machine 1"]
+    GuestOS1["Guest OS: Ubuntu 22.04"]
+    App1["Spring Boot App"]
+    GuestOS1 --> App1
+    end
+
+    subgraph VM_2 ["Virtual Machine 2"]
+    GuestOS2["Guest OS: Windows Server"]
+    App2["MS SQL Database"]
+    GuestOS2 --> App2
+    end
+
+    HostOS --> VM_1
+    HostOS --> VM_2
+    end
+```
+
+---
+
 ## 🎤 Interview Questions
 
 ### 🟢 Basic

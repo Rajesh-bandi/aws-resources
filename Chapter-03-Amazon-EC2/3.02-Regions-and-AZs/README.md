@@ -38,16 +38,16 @@ When deploying your EC2 instances, you must choose a region based on:
 
 ```mermaid
 graph TD
-    subgraph AWS Global Infrastructure
-        subgraph Region: ap-south-1 Mumbai
-            AZ1[Availability Zone: ap-south-1a<br/>1+ Data Centers]
-            AZ2[Availability Zone: ap-south-1b<br/>1+ Data Centers]
-            AZ3[Availability Zone: ap-south-1c<br/>1+ Data Centers]
-            
-            AZ1 <--> |Low Latency Fiber| AZ2
-            AZ2 <--> |Low Latency Fiber| AZ3
-            AZ3 <--> |Low Latency Fiber| AZ1
-        end
+    subgraph sub_AWS_Global_Infrastructure ["AWS Global Infrastructure"]
+    subgraph sub_Region_ap_south_1_Mumbai ["Region: ap-south-1 Mumbai"]
+    AZ1["Availability Zone: ap-south-1a<br/>1+ Data Centers"]
+    AZ2["Availability Zone: ap-south-1b<br/>1+ Data Centers"]
+    AZ3["Availability Zone: ap-south-1c<br/>1+ Data Centers"]
+
+    AZ1 <--> |Low Latency Fiber| AZ2
+    AZ2 <--> |Low Latency Fiber| AZ3
+    AZ3 <--> |Low Latency Fiber| AZ1
+    end
     end
 ```
 

@@ -40,16 +40,16 @@ Sometimes you'll see letters attached, like `m6g.large`:
 
 ```mermaid
 flowchart TD
-    Start[Analyze Workload] --> Q1{Needs heavy<br/>processing?}
+    Start["Analyze Workload"] --> Q1{Needs heavy<br/>processing?}
     Q1 -->|Yes| C_Family(Compute Optimized - C Series)
     Q1 -->|No| Q2{Needs massive<br/>memory?}
-    
+
     Q2 -->|Yes| R_Family(Memory Optimized - R/X Series)
     Q2 -->|No| Q3{Needs GPU for<br/>ML/Gaming?}
-    
+
     Q3 -->|Yes| P_Family(Accelerated - P/G Series)
     Q3 -->|No| Q4{Needs fast<br/>local disk I/O?}
-    
+
     Q4 -->|Yes| I_Family(Storage Optimized - I/D Series)
     Q4 -->|No| M_Family(General Purpose - T/M Series)
 ```

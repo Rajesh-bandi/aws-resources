@@ -66,17 +66,17 @@ AWS allows you to use the asterisk (`*`) wildcard to group multiple actions toge
 
 ```mermaid
 flowchart TD
-    subgraph "Wildcard Scoping (Highest Privilege to Lowest)"
-        A["Action: *"] --> B["Action: s3:*"]
-        B --> C["Action: s3:Get*"]
-        C --> D["Action: s3:GetObject"]
+    subgraph sub_Wildcard_Scoping_Highest_Privilege_to_Lowest ["Wildcard Scoping (Highest Privilege to Lowest)"]
+    A["Action: *"] --> B["Action: s3:*"]
+    B --> C["Action: s3:Get*"]
+    C --> D["Action: s3:GetObject"]
     end
-    
-    A -. Allows everything in AWS .-> Warn[Administrator Power!]
-    B -. Allows all S3 operations .-> S3Full[S3 Full Access]
-    C -. Allows only S3 Read operations .-> S3Read[S3 Read Only]
-    D -. Exact precision .-> S3Single[Least Privilege]
-    
+
+    A -. Allows everything in AWS .-> Warn["Administrator Power!"]
+    B -. Allows all S3 operations .-> S3Full["S3 Full Access"]
+    C -. Allows only S3 Read operations .-> S3Read["S3 Read Only"]
+    D -. Exact precision .-> S3Single["Least Privilege"]
+
     style A fill:#ff4d4d,stroke:#333,color:white
     style D fill:#4CAF50,stroke:#333,color:white
 ```

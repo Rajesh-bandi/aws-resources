@@ -34,11 +34,11 @@ Every IAM Role consists of **TWO** policies:
 
 ```mermaid
 graph LR
-    A[Trust Policy <br> 'Who can wear this hat?'] --> C{IAM Role}
-    B[Permission Policy <br> 'What can they do?'] --> C
-    
-    C --> D[Temporary Credentials <br> Assumed by EC2/User]
-    
+    A["Trust Policy <br> 'Who can wear this hat?'"] --> C{IAM Role}
+    B["Permission Policy <br> 'What can they do?'"] --> C
+
+    C --> D["Temporary Credentials <br> Assumed by EC2/User"]
+
     style A fill:#d4edda,stroke:#28a745,stroke-width:2px
     style B fill:#cce5ff,stroke:#007bff,stroke-width:2px
     style C fill:#fff3cd,stroke:#ffc107,stroke-width:3px

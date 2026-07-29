@@ -76,6 +76,29 @@ If Public Cloud is renting an apartment or riding a public bus, **Private Cloud 
 
 ---
 
+## 🏗️ Architecture & Flowchart
+
+```mermaid
+graph TD
+    subgraph Enterprise_DC ["Enterprise On-Premise Data Center"]
+    Hardware["Dedicated Enterprise Hardware"]
+    Stack["Private Cloud Platform<br/>(VMware vSphere / OpenStack)"]
+
+    subgraph Isolation ["Dedicated Tenant / Single Org"]
+    Dept1["Finance Workloads"]
+    Dept2["Healthcare / EHR Systems"]
+    Dept3["Core Banking Engine"]
+    end
+
+    Hardware --> Stack
+    Stack --> Dept1
+    Stack --> Dept2
+    Stack --> Dept3
+    end
+```
+
+---
+
 ## 🎤 Interview Questions
 
 ### 🟢 Basic

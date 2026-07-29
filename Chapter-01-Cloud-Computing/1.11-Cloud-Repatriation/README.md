@@ -70,6 +70,19 @@ Many companies repatriate *some* workloads (database storage) while leaving othe
 
 ---
 
+## 🏗️ Architecture & Flowchart
+
+```mermaid
+flowchart TD
+    Start["Evaluating Cloud Workload"] --> Q1{"Is cloud cost at scale<br/>exceeding budget?"}
+    Q1 -->|Yes| Repat["Repatriate to On-Premise / Private Cloud"]
+    Q1 -->|No| Q2{"Are there strict data sovereignty<br/>or compliance needs?"}
+    Q2 -->|Yes| Repat
+    Q2 -->|No| StayCloud["Remain in Public Cloud"]
+```
+
+---
+
 ## 🎤 Interview Questions
 
 ### 🟢 Basic

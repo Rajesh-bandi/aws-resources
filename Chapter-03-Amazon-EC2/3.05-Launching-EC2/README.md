@@ -79,10 +79,10 @@ Once running, select your instance in the console and note its **Public IPv4 add
 
 ```mermaid
 sequenceDiagram
-    participant User Terminal
-    participant Internet
-    participant AWS Security Group
-    participant EC2 Instance (Linux)
+    participant User_Terminal as User Terminal
+    participant Internet as Internet
+    participant AWS_Security_Group as AWS Security Group
+    participant EC2_Instance_Linux as EC2 Instance (Linux)
 
     User Terminal->>Internet: SSH request (Port 22) + .pem key
     Internet->>AWS Security Group: Arrives at VPC boundary

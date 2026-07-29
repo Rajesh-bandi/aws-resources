@@ -41,15 +41,15 @@ Understanding pricing is crucial for both architects and interviews.
 
 ```mermaid
 graph LR
-    User --> |HTTP/HTTPS| ALB[Load Balancer]
-    ALB --> EC2_1[EC2 Instance 1]
-    ALB --> EC2_2[EC2 Instance 2]
-    
-    subgraph AWS Cloud
-        EC2_1 --> RDS[(Amazon RDS)]
-        EC2_2 --> RDS
-        EC2_1 -.-> S3[Amazon S3]
-        EC2_2 -.-> S3
+    User --> |HTTP/HTTPS| ALB["Load Balancer"]
+    ALB --> EC2_1["EC2 Instance 1"]
+    ALB --> EC2_2["EC2 Instance 2"]
+
+    subgraph sub_AWS_Cloud ["AWS Cloud"]
+    EC2_1 --> RDS[("Amazon RDS")]
+    EC2_2 --> RDS
+    EC2_1 -.-> S3["Amazon S3"]
+    EC2_2 -.-> S3
     end
 ```
 

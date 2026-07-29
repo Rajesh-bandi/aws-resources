@@ -38,13 +38,13 @@ AWS currently supports two versions of the IAM policy language:
 ```mermaid
 flowchart LR
     Start([Create JSON Policy]) --> VField{Choose Version Field}
-    
-    VField --> |2012-10-17| New[Modern Syntax]
-    VField --> |2008-10-17| Old[Legacy Syntax]
-    
-    New --> Var[Supports Policy Variables like $aws:username]
-    Old --> NoVar[Variables NOT supported.<br/>Read as literal strings.]
-    
+
+    VField --> |2012-10-17| New["Modern Syntax"]
+    VField --> |2008-10-17| Old["Legacy Syntax"]
+
+    New --> Var["Supports Policy Variables like $aws:username"]
+    Old --> NoVar["Variables NOT supported.<br/>Read as literal strings."]
+
     style New fill:#4CAF50,stroke:#333,stroke-width:2px,color:white
     style Old fill:#ff9999,stroke:#333,stroke-width:2px,color:black
 ```

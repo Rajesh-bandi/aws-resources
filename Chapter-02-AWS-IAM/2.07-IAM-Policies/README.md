@@ -83,17 +83,17 @@ AWS IAM policies are written in JSON format. A policy consists of an overarching
 ```mermaid
 classDiagram
     class IAM_Policy {
-        +Version: String
-        +Statement: List
+    +Version: String
+    +Statement: List
     }
     class Statement {
-        +Sid: String (Optional)
-        +Effect: Allow/Deny
-        +Action: List of API Calls
-        +Resource: List of ARNs
-        +Condition: JSON (Optional)
+    +Sid: String (Optional)
+    +Effect: Allow/Deny
+    +Action: List of API Calls
+    +Resource: List of ARNs
+    +Condition: JSON (Optional)
     }
-    
+
     IAM_Policy *-- Statement : Contains 1 or more
 ```
 

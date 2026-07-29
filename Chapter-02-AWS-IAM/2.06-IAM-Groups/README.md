@@ -41,22 +41,22 @@ In some operating systems (like Active Directory), you can put groups inside oth
 ```mermaid
 flowchart TD
     subgraph Groups ["IAM Groups (Hold Policies)"]
-        G_Devs[Developers Group<br/><i>Policy: EC2FullAccess</i>]
-        G_QA[QA Group<br/><i>Policy: S3ReadOnly</i>]
-        G_DBA[DB Admin Group<br/><i>Policy: RDSFullAccess</i>]
+    G_Devs["Developers Group<br/><i>Policy: EC2FullAccess</i>"]
+    G_QA["QA Group<br/><i>Policy: S3ReadOnly</i>"]
+    G_DBA["DB Admin Group<br/><i>Policy: RDSFullAccess</i>"]
     end
 
     subgraph Users ["IAM Users (Inherit Policies)"]
-        U_Rajesh([User: Rajesh])
-        U_Alice([User: Alice])
-        U_Bob([User: Bob])
+    U_Rajesh([User: Rajesh])
+    U_Alice([User: Alice])
+    U_Bob([User: Bob])
     end
 
     G_Devs -. Contains .-> U_Rajesh
     G_Devs -. Contains .-> U_Alice
-    
+
     G_QA -. Contains .-> U_Alice
-    
+
     G_DBA -. Contains .-> U_Bob
     G_DBA -. Contains .-> U_Rajesh
 

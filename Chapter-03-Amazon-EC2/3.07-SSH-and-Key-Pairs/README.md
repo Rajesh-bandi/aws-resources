@@ -36,9 +36,9 @@ Historically, Windows did not have a built-in SSH client. Users had to download 
 
 ```mermaid
 sequenceDiagram
-    participant User(Laptop)
-    participant EC2(Linux Server)
-    
+    participant User_Laptop as User(Laptop)
+    participant EC2_Linux_Server as EC2(Linux Server)
+
     User->>EC2: Hello, I want to connect. Here is my user (ec2-user)
     EC2->>EC2: Checks authorized_keys for public key
     EC2-->>User: Sends a mathematical challenge encrypted with Public Key

@@ -26,15 +26,15 @@ A physical server is a high-performance computer designed to process requests an
 
 ```mermaid
 graph TD
-    subgraph Physical Server Chassis
-        Motherboard[Motherboard / System Bus]
-        CPU[Multi-Core CPU] --> Motherboard
-        RAM[ECC Memory / RAM] --> Motherboard
-        Storage[RAID Controller + SSDs/HDDs] --> Motherboard
-        NIC[10Gbps Network Interface Card] --> Motherboard
-        PSU1[Power Supply A] -.-> Motherboard
-        PSU2[Power Supply B] -.-> Motherboard
-    \end
+    subgraph sub_Physical_Server_Chassis ["Physical Server Chassis"]
+    Motherboard["Motherboard / System Bus"]
+    CPU["Multi-Core CPU"] --> Motherboard
+    RAM["ECC Memory / RAM"] --> Motherboard
+    Storage["RAID Controller + SSDs/HDDs"] --> Motherboard
+    NIC["10Gbps Network Interface Card"] --> Motherboard
+    PSU1["Power Supply A"] -.-> Motherboard
+    PSU2["Power Supply B"] -.-> Motherboard
+    end
 ```
 
 ---

@@ -28,12 +28,12 @@ When an AWS user makes a request (e.g., trying to read an S3 bucket), AWS IAM ev
 
 ```mermaid
 flowchart TD
-    Start[User makes API Request] --> CheckDeny{Is there an Explicit Deny?}
-    CheckDeny -- YES --> Denied[❌ ACCESS DENIED]
+    Start["User makes API Request"] --> CheckDeny{Is there an Explicit Deny?}
+    CheckDeny -- YES --> Denied["❌ ACCESS DENIED"]
     CheckDeny -- NO --> CheckAllow{Is there an Explicit Allow?}
-    CheckAllow -- YES --> Allowed[✅ ACCESS ALLOWED]
-    CheckAllow -- NO --> Implicit[❌ ACCESS DENIED <br> Implicit Deny]
-    
+    CheckAllow -- YES --> Allowed["✅ ACCESS ALLOWED"]
+    CheckAllow -- NO --> Implicit["❌ ACCESS DENIED <br> Implicit Deny"]
+
     style Denied fill:#ffcccc,stroke:#ff0000,stroke-width:2px
     style Allowed fill:#ccffcc,stroke:#00aa00,stroke-width:2px
     style Implicit fill:#ffe6cc,stroke:#ff8800,stroke-width:2px

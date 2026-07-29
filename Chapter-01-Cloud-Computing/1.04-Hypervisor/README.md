@@ -35,27 +35,27 @@ The Hypervisor acts like a traffic cop, sitting between the physical hardware (C
 
 ```mermaid
 graph TD
-    subgraph Type 1: Bare Metal
-        HW1[Hardware: CPU, RAM, Disk]
-        HYP1[Type 1 Hypervisor]
-        VM1A[VM 1: Linux]
-        VM1B[VM 2: Windows]
-        
-        HW1 --> HYP1
-        HYP1 --> VM1A
-        HYP1 --> VM1B
-    \end
-    
-    subgraph Type 2: Hosted
-        HW2[Hardware: CPU, RAM, Disk]
-        OS2[Host OS: Windows 11]
-        HYP2[Type 2 Hypervisor : VirtualBox]
-        VM2A[VM 1: Ubuntu]
-        
-        HW2 --> OS2
-        OS2 --> HYP2
-        HYP2 --> VM2A
-    \end
+    subgraph sub_Type_1_Bare_Metal ["Type 1: Bare Metal"]
+    HW1["Hardware: CPU, RAM, Disk"]
+    HYP1["Type 1 Hypervisor"]
+    VM1A["VM 1: Linux"]
+    VM1B["VM 2: Windows"]
+
+    HW1 --> HYP1
+    HYP1 --> VM1A
+    HYP1 --> VM1B
+    end
+
+    subgraph sub_Type_2_Hosted ["Type 2: Hosted"]
+    HW2["Hardware: CPU, RAM, Disk"]
+    OS2["Host OS: Windows 11"]
+    HYP2["Type 2 Hypervisor : VirtualBox"]
+    VM2A["VM 1: Ubuntu"]
+
+    HW2 --> OS2
+    OS2 --> HYP2
+    HYP2 --> VM2A
+    end
 ```
 
 ---

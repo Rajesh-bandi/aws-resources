@@ -49,36 +49,36 @@ You should lock away the root credentials and only bring them out for specific a
 
 ```mermaid
 flowchart TD
-    subgraph "Root User (The Owner)"
-        R[Email + Password]
-        RMFA[Hardware/Virtual MFA]
-        R -- Secured by --> RMFA
+    subgraph sub_Root_User_The_Owner ["Root User (The Owner)"]
+    R["Email + Password"]
+    RMFA["Hardware/Virtual MFA"]
+    R -- Secured by --> RMFA
     end
-    
-    subgraph "IAM Admin (Daily Driver)"
-        U[IAM User: Admin]
-        UMFA[Virtual MFA]
-        U -- Secured by --> UMFA
+
+    subgraph sub_IAM_Admin_Daily_Driver ["IAM Admin (Daily Driver)"]
+    U["IAM User: Admin"]
+    UMFA["Virtual MFA"]
+    U -- Secured by --> UMFA
     end
-    
-    subgraph "Capabilities"
-        Task1[Change Support Plan]
-        Task2[Close AWS Account]
-        Task3[Create EC2 Instances]
-        Task4[Manage IAM Policies]
+
+    subgraph sub_Capabilities ["Capabilities"]
+    Task1["Change Support Plan"]
+    Task2["Close AWS Account"]
+    Task3["Create EC2 Instances"]
+    Task4["Manage IAM Policies"]
     end
 
     RMFA -. Rarely used for .-> Task1
     RMFA -. Rarely used for .-> Task2
     RMFA -. CAN do, but SHOULD NOT .-> Task3
     RMFA -. CAN do, but SHOULD NOT .-> Task4
-    
+
     UMFA -- Daily usage --> Task3
     UMFA -- Daily usage --> Task4
-    
+
     UMFA -- Access Denied --> Task1
     UMFA -- Access Denied --> Task2
-    
+
     style R fill:#ff4d4d,stroke:#333,stroke-width:2px,color:white
     style U fill:#4CAF50,stroke:#333,stroke-width:2px,color:white
 ```

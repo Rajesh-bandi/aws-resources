@@ -37,12 +37,12 @@ In enterprise environments, companies don't install software manually every time
 
 ```mermaid
 flowchart LR
-    A[Launch EC2 from Base AMI] --> B[Install App & Config]
-    B --> C[Create AMI]
-    C --> D[(Custom AMI Created)]
-    D --> E[Launch Instance 1]
-    D --> F[Launch Instance 2]
-    D --> G[Launch Instance 3]
+    A["Launch EC2 from Base AMI"] --> B["Install App & Config"]
+    B --> C["Create AMI"]
+    C --> D[("Custom AMI Created")]
+    D --> E["Launch Instance 1"]
+    D --> F["Launch Instance 2"]
+    D --> G["Launch Instance 3"]
 ```
 
 ---

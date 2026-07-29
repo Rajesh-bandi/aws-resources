@@ -34,23 +34,23 @@ An **Elastic IP** is a static (fixed) IPv4 address designed for dynamic cloud co
 
 ```mermaid
 graph TD
-    Internet[Internet] --> IGW[Internet Gateway]
-    
-    subgraph VPC [VPC - Virtual Private Cloud]
-        subgraph Public Subnet
-            EC2_Web[Web Server]
-            NAT[NAT Gateway]
-        end
-        
-        subgraph Private Subnet
-            EC2_DB[Database Server]
-        end
-        
-        IGW <--> EC2_Web
-        EC2_DB --> |Outbound only| NAT
-        NAT --> IGW
+    Internet["Internet"] --> IGW["Internet Gateway"]
+
+    subgraph VPC ["VPC - Virtual Private Cloud"]
+    subgraph sub_Public_Subnet ["Public Subnet"]
+    EC2_Web["Web Server"]
+    NAT["NAT Gateway"]
     end
-    
+
+    subgraph sub_Private_Subnet ["Private Subnet"]
+    EC2_DB["Database Server"]
+    end
+
+    IGW <--> EC2_Web
+    EC2_DB --> |Outbound only| NAT
+    NAT --> IGW
+    end
+
     classDef pub fill:#d4edda,stroke:#28a745,stroke-width:2px;
     classDef priv fill:#f8d7da,stroke:#dc3545,stroke-width:2px;
     class EC2_Web,NAT pub;

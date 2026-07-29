@@ -70,6 +70,23 @@ The **Public Cloud** is like a **Public Bus System** or an **Apartment Building*
 
 ---
 
+## 🏗️ Architecture & Flowchart
+
+```mermaid
+graph TD
+    subgraph Public_Cloud_Providers ["Top Public Cloud Providers"]
+    AWS["Amazon Web Services (AWS)<br/>Market Leader (200+ Services)"]
+    Azure["Microsoft Azure<br/>Enterprise & Windows Ecosystem"]
+    GCP["Google Cloud Platform (GCP)<br/>Big Data & Machine Learning"]
+    end
+
+    Users(("Global Internet Users")) --> AWS
+    Users --> Azure
+    Users --> GCP
+```
+
+---
+
 ## 🎤 Interview Questions
 
 ### 🟢 Basic

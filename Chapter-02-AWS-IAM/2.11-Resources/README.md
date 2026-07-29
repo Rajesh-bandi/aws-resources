@@ -57,12 +57,12 @@ A very common area of confusion is the difference between a bucket itself and th
 
 ```mermaid
 graph TD
-    A[AWS Account: 123456789012] --> B(S3 Service)
+    A["AWS Account: 123456789012"] --> B(S3 Service)
     A --> C(EC2 Service)
-    B --> D[Bucket: arn:aws:s3:::my-bucket]
-    D --> E[Objects: arn:aws:s3:::my-bucket/*]
-    C --> F[Instance: arn:aws:ec2:us-east-1:123456789012:instance/i-xxx]
-    
+    B --> D["Bucket: arn:aws:s3:::my-bucket"]
+    D --> E["Objects: arn:aws:s3:::my-bucket/*"]
+    C --> F["Instance: arn:aws:ec2:us-east-1:123456789012:instance/i-xxx"]
+
     style D fill:#f9f,stroke:#333,stroke-width:2px
     style E fill:#ccf,stroke:#333,stroke-width:2px
 ```

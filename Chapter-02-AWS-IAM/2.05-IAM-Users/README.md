@@ -48,18 +48,18 @@ You can enforce:
 
 ```mermaid
 flowchart TD
-    User([New Employee]) --> IAM[Create IAM User]
-    
-    IAM --> Console[Console Access]
-    IAM --> Prog[Programmatic Access]
-    
-    Console --> PWD[Password]
-    PWD -. Regulated by .-> Policy[Account Password Policy]
-    Policy -. Enforces .-> Rules[Length, Complexity, Rotation]
-    
-    Prog --> Keys[Access Key Pair]
-    Keys --> Max[Max 2 Keys per User]
-    Max --> Rotate[Allows seamless Key Rotation]
+    User([New Employee]) --> IAM["Create IAM User"]
+
+    IAM --> Console["Console Access"]
+    IAM --> Prog["Programmatic Access"]
+
+    Console --> PWD["Password"]
+    PWD -. Regulated by .-> Policy["Account Password Policy"]
+    Policy -. Enforces .-> Rules["Length, Complexity, Rotation"]
+
+    Prog --> Keys["Access Key Pair"]
+    Keys --> Max["Max 2 Keys per User"]
+    Max --> Rotate["Allows seamless Key Rotation"]
 ```
 
 ---

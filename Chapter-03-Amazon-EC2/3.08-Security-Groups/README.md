@@ -38,13 +38,13 @@ When you launch an instance, you associate one or more security groups with it. 
 
 ```mermaid
 graph TD
-    User((User)) -->|HTTP Port 80| Internet[Internet]
-    Internet --> SG[Security Group]
-    
-    subgraph VPC
-        SG -->|Allowed| EC2_Web[EC2 Web Server]
-        EC2_Web -->|MySQL Port 3306| DB_SG[Database SG]
-        DB_SG -->|Allowed| EC2_DB[EC2 Database]
+    User(("User")) -->|HTTP Port 80| Internet["Internet"]
+    Internet --> SG["Security Group"]
+
+    subgraph sub_VPC ["VPC"]
+    SG -->|Allowed| EC2_Web["EC2 Web Server"]
+    EC2_Web -->|MySQL Port 3306| DB_SG["Database SG"]
+    DB_SG -->|Allowed| EC2_DB["EC2 Database"]
     end
 ```
 

@@ -73,6 +73,23 @@ When you get into a taxi, the meter starts running. You pay for the exact distan
 
 ---
 
+## 🏗️ Architecture & Flowchart
+
+```mermaid
+graph LR
+    subgraph Billing_Model ["Pay-As-You-Go vs CapEx"]
+    CapEx["Traditional CapEx<br/>High Upfront Purchase ($50,000+)"]
+    OpEx["Cloud OpEx (Pay-As-You-Go)<br/>Hourly / Per-Second Metered Billing"]
+    end
+
+    Traffic["Traffic Spikes on Black Friday"] --> OpEx
+    OpEx --> ScaleUp["Auto-Scales Up (Pay More)"]
+    TrafficQuiet["Low Night Traffic"] --> OpEx
+    OpEx --> ScaleDown["Auto-Scales Down (Pay Less)"]
+```
+
+---
+
 ## 🎤 Interview Questions
 
 ### 🟢 Basic

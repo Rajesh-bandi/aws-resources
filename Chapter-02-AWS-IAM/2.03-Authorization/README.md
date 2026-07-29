@@ -41,12 +41,12 @@ AWS evaluates policies based on three core rules, in a very specific order of pr
 
 ```mermaid
 flowchart TD
-    Start[User makes API Request to AWS] --> D1{Is there an Explicit Deny?}
-    D1 -- Yes --> Deny[DENY the Request]
+    Start["User makes API Request to AWS"] --> D1{Is there an Explicit Deny?}
+    D1 -- Yes --> Deny["DENY the Request"]
     D1 -- No --> D2{Is there an Explicit Allow?}
-    D2 -- Yes --> Allow[ALLOW the Request]
-    D2 -- No --> Implicit[DENY the Request<br/>'Implicit Deny']
-    
+    D2 -- Yes --> Allow["ALLOW the Request"]
+    D2 -- No --> Implicit["DENY the Request<br/>'Implicit Deny'"]
+
     style Deny fill:#ff4d4d,stroke:#333,stroke-width:2px,color:white
     style Allow fill:#4CAF50,stroke:#333,stroke-width:2px,color:white
     style Implicit fill:#ff9999,stroke:#333,stroke-width:2px,color:black

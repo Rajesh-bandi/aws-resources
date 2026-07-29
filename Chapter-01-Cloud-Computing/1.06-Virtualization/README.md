@@ -28,27 +28,27 @@ The **Consolidation Ratio** is a key metric in virtualization. It refers to the 
 
 ```mermaid
 graph TD
-    subgraph BEFORE: Traditional Architecture (15% Utilization)
-        S1[Server 1: Web App]
-        S2[Server 2: HR App]
-        S3[Server 3: Mail App]
-        S4[Server 4: DNS]
-    \end
-    
-    subgraph AFTER: Virtualization Architecture (80% Utilization)
-        HW[Single Powerful Physical Server]
-        HYP[Hypervisor]
-        VM1[VM 1: Web App]
-        VM2[VM 2: HR App]
-        VM3[VM 3: Mail App]
-        VM4[VM 4: DNS]
-        
-        HW --> HYP
-        HYP --> VM1
-        HYP --> VM2
-        HYP --> VM3
-        HYP --> VM4
-    \end
+    subgraph sub_BEFORE_Traditional_Architecture_15_Utilization ["BEFORE: Traditional Architecture (15% Utilization)"]
+    S1["Server 1: Web App"]
+    S2["Server 2: HR App"]
+    S3["Server 3: Mail App"]
+    S4["Server 4: DNS"]
+    end
+
+    subgraph sub_AFTER_Virtualization_Architecture_80_Utilization ["AFTER: Virtualization Architecture (80% Utilization)"]
+    HW["Single Powerful Physical Server"]
+    HYP["Hypervisor"]
+    VM1["VM 1: Web App"]
+    VM2["VM 2: HR App"]
+    VM3["VM 3: Mail App"]
+    VM4["VM 4: DNS"]
+
+    HW --> HYP
+    HYP --> VM1
+    HYP --> VM2
+    HYP --> VM3
+    HYP --> VM4
+    end
 ```
 
 ---

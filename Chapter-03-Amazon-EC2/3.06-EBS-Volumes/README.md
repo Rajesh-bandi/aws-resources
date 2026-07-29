@@ -42,24 +42,24 @@ You can encrypt an EBS volume using KMS (Key Management Service) AES-256 encrypt
 
 ```mermaid
 graph TD
-    subgraph Region: us-east-1
-        subgraph AZ: us-east-1a
-            EC2[EC2 Instance]
-            EBS1[(EBS Volume 1 - Root OS)]
-            EBS2[(EBS Volume 2 - Database)]
-            
-            EBS1 <--> |Network| EC2
-            EBS2 <--> |Network| EC2
-        end
-        
-        subgraph AZ: us-east-1b
-            EC2_B[EC2 Instance - Cannot attach EBS1/2]
-        end
-        
-        EBS1 -.-> |Backup| Snap1[EBS Snapshot]
+    subgraph sub_Region_us_east_1 ["Region: us-east-1"]
+    subgraph sub_AZ_us_east_1a ["AZ: us-east-1a"]
+    EC2["EC2 Instance"]
+    EBS1[("EBS Volume 1 - Root OS")]
+    EBS2[("EBS Volume 2 - Database")]
+
+    EBS1 <--> |Network| EC2
+    EBS2 <--> |Network| EC2
     end
-    
-    Snap1 -.-> |Stored in S3 under the hood| S3[(Amazon S3)]
+
+    subgraph sub_AZ_us_east_1b ["AZ: us-east-1b"]
+    EC2_B["EC2 Instance - Cannot attach EBS1/2"]
+    end
+
+    EBS1 -.-> |Backup| Snap1["EBS Snapshot"]
+    end
+
+    Snap1 -.-> |Stored in S3 under the hood| S3[("Amazon S3")]
 ```
 
 ---

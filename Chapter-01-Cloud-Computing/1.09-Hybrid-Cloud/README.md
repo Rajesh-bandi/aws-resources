@@ -19,21 +19,21 @@ It provides businesses with greater flexibility, more deployment options, and he
 
 ```mermaid
 graph TD
-    subgraph Private Cloud / On-Premise
-        DB[(Highly Sensitive Database)]
-        Mainframe[Legacy Banking System]
-    \end
-    
-    subgraph Secure Connection
-        VPN[Encrypted VPN / AWS Direct Connect]
-    \end
-    
-    subgraph Public Cloud (AWS)
-        Web[Web Servers - EC2]
-        App[Mobile App Backend]
-        AI[Machine Learning Analytics]
-    \end
-    
+    subgraph sub_Private_Cloud_On_Premise ["Private Cloud / On-Premise"]
+    DB[("Highly Sensitive Database")]
+    Mainframe["Legacy Banking System"]
+    end
+
+    subgraph sub_Secure_Connection ["Secure Connection"]
+    VPN["Encrypted VPN / AWS Direct Connect"]
+    end
+
+    subgraph sub_Public_Cloud_AWS ["Public Cloud (AWS)"]
+    Web["Web Servers - EC2"]
+    App["Mobile App Backend"]
+    AI["Machine Learning Analytics"]
+    end
+
     DB <--> VPN
     Mainframe <--> VPN
     VPN <--> Web

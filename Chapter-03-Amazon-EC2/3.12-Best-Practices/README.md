@@ -46,29 +46,29 @@
 
 ```mermaid
 graph TD
-    Internet --> IGW[Internet Gateway]
-    
-    subgraph VPC
-        subgraph Public Subnet
-            ALB[Application Load Balancer]
-            NAT[NAT Gateway]
-        end
-        
-        subgraph Private Subnet - AZ 1
-            EC2_Web1[Web Server - No Public IP]
-            EC2_DB1[(Primary DB)]
-        end
-        
-        subgraph Private Subnet - AZ 2
-            EC2_Web2[Web Server - No Public IP]
-            EC2_DB2[(Standby DB)]
-        end
-        
-        ALB --> EC2_Web1
-        ALB --> EC2_Web2
-        EC2_Web1 --> EC2_DB1
-        EC2_Web2 --> EC2_DB1
-        EC2_Web1 -.-> |Updates via| NAT
+    Internet --> IGW["Internet Gateway"]
+
+    subgraph sub_VPC ["VPC"]
+    subgraph sub_Public_Subnet ["Public Subnet"]
+    ALB["Application Load Balancer"]
+    NAT["NAT Gateway"]
+    end
+
+    subgraph sub_Private_Subnet_AZ_1 ["Private Subnet - AZ 1"]
+    EC2_Web1["Web Server - No Public IP"]
+    EC2_DB1[("Primary DB")]
+    end
+
+    subgraph sub_Private_Subnet_AZ_2 ["Private Subnet - AZ 2"]
+    EC2_Web2["Web Server - No Public IP"]
+    EC2_DB2[("Standby DB")]
+    end
+
+    ALB --> EC2_Web1
+    ALB --> EC2_Web2
+    EC2_Web1 --> EC2_DB1
+    EC2_Web2 --> EC2_DB1
+    EC2_Web1 -.-> |Updates via| NAT
     end
 ```
 

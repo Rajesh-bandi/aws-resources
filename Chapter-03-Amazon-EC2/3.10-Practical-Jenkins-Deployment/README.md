@@ -85,12 +85,12 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 ```mermaid
 graph LR
-    User[Developer] --> |HTTP 8080| EC2[EC2 Instance - Jenkins]
+    User["Developer"] --> |HTTP 8080| EC2["EC2 Instance - Jenkins"]
     User --> |SSH 22| EC2
-    
-    subgraph AWS Cloud
-        EC2 --> |Git Fetch| GitHub[GitHub Repo]
-        EC2 --> |Deploy| Target[Target Environment]
+
+    subgraph sub_AWS_Cloud ["AWS Cloud"]
+    EC2 --> |Git Fetch| GitHub["GitHub Repo"]
+    EC2 --> |Deploy| Target["Target Environment"]
     end
 ```
 

@@ -51,20 +51,20 @@ If a developer only needs to read files from an S3 bucket, you give them `s3:Get
 ```mermaid
 flowchart LR
     subgraph Identity ["Identity (Who?)"]
-        U[IAM User]
-        G[IAM Group]
-        R[IAM Role]
+    U["IAM User"]
+    G["IAM Group"]
+    R["IAM Role"]
     end
-    
+
     subgraph Auth ["Authentication & Authorization"]
-        A[Login / API Key]
-        P[IAM Policies]
+    A["Login / API Key"]
+    P["IAM Policies"]
     end
-    
+
     subgraph Resources ["AWS Resources (What?)"]
-        S3[(Amazon S3)]
-        EC2[Amazon EC2]
-        RDS[(Amazon RDS)]
+    S3[("Amazon S3")]
+    EC2["Amazon EC2"]
+    RDS[("Amazon RDS")]
     end
 
     U --> A

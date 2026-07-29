@@ -55,21 +55,21 @@ Types of MFA supported by AWS:
 ```mermaid
 flowchart TD
     User([IAM User / Developer])
-    
-    subgraph "Authentication Methods"
-        Console[AWS Management Console]
-        CLI[AWS CLI / SDK / API]
+
+    subgraph sub_Authentication_Methods ["Authentication Methods"]
+    Console["AWS Management Console"]
+    CLI["AWS CLI / SDK / API"]
     end
-    
-    subgraph "Credentials Required"
-        Creds1[Username + Password + MFA]
-        Creds2[Access Key ID + Secret Key]
+
+    subgraph sub_Credentials_Required ["Credentials Required"]
+    Creds1["Username + Password + MFA"]
+    Creds2["Access Key ID + Secret Key"]
     end
-    
+
     User -- Wants Web UI Access --> Console
     Console --> Creds1
-    Creds1 -- Authenticated --> AWS[AWS Cloud]
-    
+    Creds1 -- Authenticated --> AWS["AWS Cloud"]
+
     User -- Wants Terminal/Code Access --> CLI
     CLI --> Creds2
     Creds2 -- Authenticated --> AWS

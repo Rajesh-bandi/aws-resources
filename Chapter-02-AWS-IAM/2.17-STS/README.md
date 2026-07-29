@@ -41,7 +41,7 @@ sequenceDiagram
     IMDS->>STS: Call sts:AssumeRole
     STS-->>IMDS: Returns (AccessKey, SecretKey, SessionToken, Expiry)
     IMDS-->>EC2: Provides Temporary Credentials
-    
+
     EC2->>S3: Call s3:GetObject + (AccessKey, SecretKey, SessionToken)
     S3-->>EC2: File Downloaded Successfully
 ```
